@@ -1,0 +1,29 @@
+joachim8675309.medium.com/instaIling-node-js-with-nvm-4dc469c977d9
+github.com/TryCatchLearn/reactivities
+
+dotnet --info
+dotnet new list
+./create-projects-win.ps1
+
+dotnet sln list
+dotnet run
+dotnet tool list -g
+
+dotnet install tool -g dotnet-ef --version 8.0.0
+dotnet ef
+dotnet ef migrations add InitialCreate -s API -p Persistence
+dotnet watch
+dotnet watch --no-hot-reload run
+dotnet new -l
+dotnet new gitignore
+
+git status
+git init
+
+
+
+
+
+
+
+
