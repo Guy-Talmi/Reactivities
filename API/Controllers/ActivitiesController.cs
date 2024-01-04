@@ -5,6 +5,7 @@ using Persistence;
 
 namespace API.Controllers;
 
+// localhost:5001/api/Activities
 public class ActivitiesController : BaseApiController
 {
     public DataContext _Context { get; }
