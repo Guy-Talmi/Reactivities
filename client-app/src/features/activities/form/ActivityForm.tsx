@@ -5,15 +5,17 @@ import { ChangeEvent, useState } from 'react';
 interface ActivityFormProps {
     activity: Activity | undefined,
     closeForm: () => void,
-    createOrEditActivity: (activity: Activity) => void
+    createOrEditActivity: (activity: Activity) => void,
+    submitting: boolean
 }
 
-const ActivityForm = (
-    {
-        activity: selectedActivity,
-        closeForm,
-        createOrEditActivity
-    }: ActivityFormProps) => {
+const ActivityForm = ({
+    activity: selectedActivity,
+    closeForm,
+    createOrEditActivity,
+    submitting
+}: ActivityFormProps) => {
+
     const initialSatate = selectedActivity ?? {
         id: '',
         title: '',
@@ -58,6 +60,7 @@ const ActivityForm = (
                     onChange={handleInputChange}
                 />
                 <Form.Input
+                    type='date'
                     placeholder='Date'
                     value={activity.date}
                     name='date'
@@ -79,7 +82,9 @@ const ActivityForm = (
                     floated='right'
                     positive
                     type='submit'
-                    content='Submit' />
+                    content='Submit'
+                    loading={submitting}
+                />
                 <Button
                     floated='right'
                     type='button'
