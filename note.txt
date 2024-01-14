@@ -47,6 +47,9 @@ node -v
 
 npm run build
 
+npm install uuid
+npm i --save-dev @types/uuid
+
 
 
 
