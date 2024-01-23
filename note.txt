@@ -56,6 +56,10 @@ npm install react-router-dom
 
  npm install react-calendar
  npm install @types/react-calendar
+ npm install react-toastify
+ clear
+
+ dotnet ef database drop -s API -p Persistence
 
 
 
