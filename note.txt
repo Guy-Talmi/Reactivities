@@ -61,9 +61,14 @@ npm install react-router-dom
 
  dotnet ef database drop -s API -p Persistence
 
+npm install formik
+npm --version
 
-
-
-
+npm install yup
+npm install @types/yup --save-dev
+npm ls date-fns
+npm install date-fns
+npm install react-datepicker
+npm install @types/react-datepicker --save-dev
 
 
