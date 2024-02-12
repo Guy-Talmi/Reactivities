@@ -1,10 +1,12 @@
 using Application.Activities;
 using Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
 // localhost:5001/api/Activities
+[AllowAnonymous]
 public class ActivitiesController : BaseApiController
 {
     [HttpGet] // /api/activities

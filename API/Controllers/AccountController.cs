@@ -43,10 +43,18 @@ public class AccountController : ControllerBase
     public async Task<ActionResult<UserDTO>> Register(RegisterDTO registerDTO)
     {
         if (await _userManager.FindByEmailAsync(registerDTO.Email) != null)
-            return BadRequest("Email is already taken");
+        {
+            ModelState.AddModelError("email", "Email is already taken");
+            return ValidationProblem();
+            //return BadRequest(ModelState);
+        }
 
         if (await _userManager.FindByNameAsync(registerDTO.Username) != null)
-            return BadRequest("Username is already taken");
+        {
+            ModelState.AddModelError("username", "Username is already taken");
+            return ValidationProblem();
+            //return BadRequest(ModelState);
+        }
 
         var user = new AppUser
         {
