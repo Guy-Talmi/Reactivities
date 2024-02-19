@@ -80,3 +80,15 @@ npm install @types/react-datepicker --save-dev
  dotnet ef database update -s API -p Persistence
  
  dotnet ef migrations remove -s API -p Persistence
+ dotnet ef migrations add ActivityAttendee -s API -p Persistence
+ dotnet ef migrations add AddCancelledProperty -s API -p Persistence
+
+ dotnet new classlib -n Infrastructure
+ dotnet sln add Infrastructure
+ dotnet add reference ../Application
+ dotnet add reference ../Infrastructure
+
+ dotnet ef database drop -s API -p Persistence
+
+ dotnet watch run
+ 
